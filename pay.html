@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pago</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Barra de navegacion superior -->
+    <section>
+        <style>
+            .navbar {
+                background-color: #333;
+                display: flex;
+                justify-content: flex-end;
+                padding: 10px;
+            }
+        
+            .navbar a {
+                color: #fff;
+                text-decoration: none;
+                margin-left: 10px;
+                padding: 8px;
+            }
+        
+            .navbar a:first-child {
+                margin-right: auto;
+            }
+        
+            .navbar a:hover {
+                background-color: #555;
+            }
+        
+            /* Media query para pantallas más pequeñas */
+            @media (max-width: 600px) {
+                .navbar {
+                    justify-content: center;
+                }
+        
+                .navbar a {
+                    margin: 5px;
+                }
+            }
+        </style>
+        
+        <div class="navbar">
+            <a href="file:///C:/Users/Administrator/Desktop/TP_INTEGRADOR_CODO_A_CODO/index.html">Conf Bs As</a>
+            <a style="color:#646363;" href="#">La conferencia</a>
+            <a style="color:#646363;" href="#">Los oradores</a>
+            <a style="color:#646363;" href="#">El lugar y la fecha</a>
+            <a href="#">Conviértete en orador</a>
+            <a style="color: green;" href="#">Comprar tickets</a>
+        </div>    
+    </section>
+    <!-- Cajas de descuentos segun corresponda la categoria -->
+    <section>
+        <style>
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin-top: -130px;
+            }
+        
+            .box1 {
+                width: 200px;
+                height: 200px;
+                border: 1px solid #5b72e5;
+                text-align: center;
+                padding: 20px;
+                margin: 10px;
+                border-radius: 0.6rem;
+            }
+            
+            .box2 {
+                width: 200px;
+                height: 200px;
+                border: 1px solid #c36666;
+                text-align: center;
+                padding: 20px;
+                margin: 10px;
+                border-radius: 0.6rem;
+            }
+
+            .box3 {
+                width: 200px;
+                height: 200px;
+                border: 1px solid #d6e063;
+                text-align: center;
+                padding: 20px;
+                margin: 10px;
+                border-radius: 0.6rem;
+            }
+
+            .box button {
+                width: 120px;
+                padding: 10px;
+                background-color: #333;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                margin-bottom: 1px;
+            }
+            
+            
+        </style>
+        
+        <div class="container">
+            <div class="box1">
+                <h5>Estudiante</h5>
+                <h6>Tienen un descuento de 80 %</h6>
+                <p>Presentar documentación</p>
+                
+            </div>
+            <div class="box2">
+                <h5>Trainee</h5>
+                <h6>Tiene descuento de 50%</h6>
+                <p>Presentar documentación</p>
+                
+            </div>
+            <div class="box3">
+                <h5>Junior</h5>
+                <h6>Tiene descuento de 15%</h6>
+                <p>Presentar documentación</p>
+                
+            </div>
+        </div>         
+    </section>
+    <section>
+        <!-- Formularios para la compra de los tickets -->
+        <h1 style="justify-content: center; text-align: center; margin-top: -100px; margin-bottom: 50px;">VALOR DE TICKET $200</h1>
+    </section>
+    <section>
+        <div class="container">
+            <form>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label for="nombre"></label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label for="apellido"></label>
+                            <input type="text" id="apellido" name="apellido" placeholder="Apellido" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label for="correo"></label>
+                            <input type="email" id="correo" name="correo" placeholder="correo" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label for="cantidad">Cantidad:</label>
+                            <input type="number" id="cantidad" name="cantidad" placeholder="0" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label for="categoria">Categoría:</label>
+                            <select id="categoria" name="categoria" class="form-control">
+                                <option value="opcion1">Estudiante</option>
+                                <option value="opcion2">Trainee</option>
+                                <option value="opcion3">Junior</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <div class="col-md-6 text-center">
+                            <h3 style="border: #333 solid; border-radius: 0.2rem;padding: 10px;display: inline-block;margin: 0%;white-space: nowrap;margin-bottom: 10px;background-color: lightblue;">Total a Pagar: $<span id="totalAmount">0</span></h3>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="background: darkred; border-color: antiquewhite;">Borrar</button>
+                        <button type="button" class="btn btn-primary" style="background-color: darkgreen; border-color: antiquewhite;" onclick="calculateTotal()">Resumen</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section>
+        <footer id="nav-baja" style="position: absolute; width: 100%;">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgb(49, 59, 87); border-radius: 0.09rem;">
+              <div class="container-fluid" style="padding: 20px;">
+                <a class="navbar-brand" href="#" style="color: aliceblue;">Preguntas frecuentes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                  <div class="navbar-nav text-center">
+                    <a class="nav-link active" aria-current="page" href="#" style="color: white;">Contáctanos</a>
+                    <a class="nav-link" href="#" style="color: white;">Prensa</a>
+                    <a class="nav-link" href="#" style="color: white;">Conferencias</a>
+                    <a class="nav-link active" aria-current="page" href="#" style="color: white;">Terminos & Condiciones</a>
+                    <a class="nav-link" href="#" style="color: white;">Privacidad</a>
+                    <a class="nav-link" href="#" style="color: white;">Estudiantes</a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </footer>
+    </section>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="pay.js"></script>
+</body>
+</html>
